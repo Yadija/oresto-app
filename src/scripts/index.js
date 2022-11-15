@@ -1,12 +1,21 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import 'regenerator-runtime';
+
+/* styles */
 import '../styles/main.scss';
 import '../styles/skip-content.scss';
 import '../styles/responsive.scss';
+
+// components
+import './components/app-bar';
+import './components/hero-bar';
+import './components/footer-bar';
+
+// data
 import data from '../DATA.json';
 
-const posts = document.getElementById("posts");
-data.restaurants.forEach(restaurant => {
-  const card = document.createElement("div");
+const posts = document.getElementById('posts');
+data.restaurants.forEach((restaurant) => {
+  const card = document.createElement('div');
   card.innerHTML = `
     <div class="card tabindex="0"">
       <div class="card-head">
@@ -29,12 +38,12 @@ const hamburgerButtonElement = document.querySelector('#hamburger');
 const drawerElement = document.querySelector('#drawer');
 const mainElement = document.querySelector('main');
 
-hamburgerButtonElement.addEventListener('click', event => {
+hamburgerButtonElement.addEventListener('click', (event) => {
   drawerElement.classList.toggle('open');
   event.stopPropagation();
 });
 
-mainElement.addEventListener('click', event => {
+mainElement.addEventListener('click', (event) => {
   drawerElement.classList.remove('open');
   event.stopPropagation();
-})
+});

@@ -1,8 +1,17 @@
 @media screen and (min-width: 650px) {
-  .posts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  main {
+    .hero {
+      .hero-thumb {
+        width: 50%;
+        font-size: 35px;
+      }
+    }
+  
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
   }
 }
 @media screen and (min-width: 850px) {
@@ -31,14 +40,16 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .hero {
-    img {
-      min-width: 1000px;
+  main {
+    .hero {
+      img {
+        min-width: 1000px;
+      }
     }
-  }
-
-  .posts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
