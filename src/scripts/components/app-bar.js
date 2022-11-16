@@ -12,7 +12,7 @@ class AppBar extends HTMLElement {
         <nav id="drawer">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#">Favorite</a></li>
+            <li><a href="#/favorite">Favorite</a></li>
             <li><a href="https://www.instagram.com/yadija_/">About Us</a></li>
           </ul>
         </nav>
