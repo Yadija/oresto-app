@@ -1,0 +1,24 @@
+import './restaurant-item';
+
+class RestaurantList extends HTMLElement {
+  set restaurantList(restaurantList) {
+    this._restaurantList = restaurantList;
+    this.render();
+  }
+
+  get restaurantList() {
+    return this._restaurantList;
+  }
+
+  render() {
+    this.classList.add('posts');
+    this.innerHTML = '';
+    this._restaurantList.forEach((item) => {
+      const restaurantItemElement = document.createElement('restaurant-item');
+      restaurantItemElement.restaurantItem = item;
+      this.appendChild(restaurantItemElement);
+    });
+  }
+}
+
+customElements.define('restaurant-list', RestaurantList);

@@ -1,4 +1,12 @@
+import CONFIG from '../global/config';
+
 class FooterBar extends HTMLElement {
+  constructor() {
+    super();
+    this._appName = CONFIG.APP_NAME;
+    this._copyYears = new Date().getFullYear();
+  }
+
   connectedCallback() {
     this.render();
   }
@@ -6,7 +14,7 @@ class FooterBar extends HTMLElement {
   render() {
     this.innerHTML = `
       <footer>
-        <p>Copyright © 2022 - OResto</p>
+        <p>Copyright © ${this._copyYears} - ${this._appName}</p>
       </footer>
     `;
   }

@@ -1,9 +1,9 @@
 import Detail from '../view/page/detail';
 import Favorite from '../view/page/favorite';
-import RestaurantList from '../view/page/restaurant-list';
+import Home from '../view/page/home';
 
 const routes = {
-  '/': RestaurantList, // default page
+  '/': Home, // default page
   '/favorite': Favorite,
   '/detail/:id': Detail,
 };

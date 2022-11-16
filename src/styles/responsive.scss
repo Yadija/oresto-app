@@ -1,3 +1,20 @@
+@media screen and (min-width: 500px) {
+  main {
+    /* detail */
+    .jumbotron-detail {
+      .jumbotron-thumb {
+
+        padding-top: 75px;
+        font-size: 30px;
+      }
+    }
+
+    .restaurant-info {
+      padding: 10px 60px;
+    }
+  }
+}
+
 @media screen and (min-width: 650px) {
   main {
     .hero {
@@ -10,10 +27,11 @@
     .posts {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 25px;
     }
   }
 }
+
 @media screen and (min-width: 850px) {
   /* off canvas */
   #hamburger {
@@ -40,7 +58,24 @@
 
   main {
     h2 {
-      margin-top: 100px;
+      margin-top: 70px;
+    }
+
+    /* detail */
+    .restaurant-menu {
+      .menu-detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+      }
+    }
+
+    .restaurant-review {
+      .review-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+      }
     }
   }
 }

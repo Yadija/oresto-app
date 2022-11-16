@@ -1,25 +1,24 @@
 import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
-import DrawerInitiator from '../utils/drawer-initiator';
+// import DrawerInitiator from '../utils/drawer-initiator';
 
 class App {
-  constructor({ button, drawer, content }) {
-    this._button = button;
-    this._drawer = drawer;
+  constructor({ content }) {
     this._content = content;
 
     this._initialAppShell();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _initialAppShell() {
-    DrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
-      content: this._content,
-    });
+    // TODO
   }
 
   async renderPage() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    document.querySelector('#drawer').classList.remove('open');
+
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

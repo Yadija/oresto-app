@@ -1,3 +1,5 @@
+import CONFIG from '../global/config';
+
 class HeroBar extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -6,7 +8,7 @@ class HeroBar extends HTMLElement {
   render() {
     this.innerHTML = `
       <div class="hero">
-        <img src="./images/heros/hero-image_1.jpg" alt="Jumbotron">
+        <img src="${CONFIG.APP_HERO_IMG}" alt="Jumbotron">
         <div class="hero-thumb">
           <p>Find a restaurant you want</p>
         </div>
