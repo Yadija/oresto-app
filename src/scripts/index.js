@@ -12,6 +12,14 @@ import './components/footer-bar';
 
 // data
 import data from '../DATA.json';
+import App from './view/app';
+
+// eslint-disable-next-line no-unused-vars
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('#mainContent'),
+});
 
 const posts = document.getElementById('posts');
 data.restaurants.forEach((restaurant) => {
@@ -31,19 +39,4 @@ data.restaurants.forEach((restaurant) => {
   `;
 
   posts.appendChild(card);
-});
-
-// off canvas
-const hamburgerButtonElement = document.querySelector('#hamburger');
-const drawerElement = document.querySelector('#drawer');
-const mainElement = document.querySelector('main');
-
-hamburgerButtonElement.addEventListener('click', (event) => {
-  drawerElement.classList.toggle('open');
-  event.stopPropagation();
-});
-
-mainElement.addEventListener('click', (event) => {
-  drawerElement.classList.remove('open');
-  event.stopPropagation();
 });
