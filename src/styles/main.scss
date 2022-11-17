@@ -281,52 +281,75 @@ main {
       border-radius: 4px;
       padding: 40px 28px;
 
-        .review-form-group {
-          display: flex;
-          flex-direction: column;
+      .review-form-group {
+        display: flex;
+        flex-direction: column;
 
-          .review-form label {
-            font-weight: 600;
-            margin-bottom: 8px;
-          }
-
-          .review-form-group input:-webkit-autofill {
-            box-shadow: 0 0 0 100px white inset;
-          }
-
-          .review-form-input-name {
-            font-family: 'Poppins', sans-serif;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            padding: 6px 10px;
-          }
-
-          .review-form-input-review {
-            font-family: 'Poppins', sans-serif;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            padding: 6px 10px;
-            resize: none;
-          }
+        .review-form label {
+          font-weight: 600;
+          margin-bottom: 8px;
         }
 
-        .review-form-submit {
-          background-color: $base-dark;
+        .review-form-group input:-webkit-autofill {
+          box-shadow: 0 0 0 100px white inset;
+        }
+
+        .review-form-input-name {
+          font-family: 'Poppins', sans-serif;
           border: none;
           border-radius: 4px;
-          color: #f1f1f1;
           font-size: 14px;
-          min-height: 44px;
-          transition: transform ease-in-out 0.2s;
-          width: 128px;
+          padding: 6px 10px;
+        }
 
-          &:hover, &:active {
-            transform: scale(1.1);
-          }
+        .review-form-input-review {
+          font-family: 'Poppins', sans-serif;
+          border: none;
+          border-radius: 4px;
+          font-size: 14px;
+          padding: 6px 10px;
+          resize: none;
         }
       }
+
+      .review-form-submit {
+        background-color: $base-dark;
+        border: none;
+        border-radius: 4px;
+        color: #f1f1f1;
+        font-size: 14px;
+        min-height: 44px;
+        transition: transform ease-in-out 0.2s;
+        width: 128px;
+
+        &:hover, &:active {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  /* page error */
+  .content-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 300px;
+    height: 70vh;
+  
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+    }
+  
+    p {
+      font-size: 16px;
+      text-align: center;
+      font-weight: 300;
+    }
   }
 }
 

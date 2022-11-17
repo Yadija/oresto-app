@@ -2,6 +2,7 @@ import '../../components/hero-bar';
 import '../../components/restaurant-list';
 
 import RestaurantSource from '../../data/restaurant-source';
+import { renderError } from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -17,9 +18,14 @@ const Home = {
     const restaurantListElement = document.querySelector('restaurant-list');
     loadingIndicatorElement.style.display = 'block';
 
-    const restaurants = await RestaurantSource.listRestaurant();
-    restaurantListElement.restaurantList = restaurants;
-    loadingIndicatorElement.style.display = 'none';
+    try {
+      const restaurants = await RestaurantSource.listRestaurant();
+      restaurantListElement.restaurantList = restaurants;
+    } catch {
+      renderError();
+    } finally {
+      loadingIndicatorElement.style.display = 'none';
+    }
   },
 };
 

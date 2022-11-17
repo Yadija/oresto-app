@@ -1,6 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import RestaurantSource from '../data/restaurant-source';
+
 import UrlParser from '../routes/url-parser';
+
+import { renderError } from '../view/templates/template-creator';
 
 class ReviewForm extends HTMLElement {
   constructor() {
@@ -71,8 +74,7 @@ class ReviewForm extends HTMLElement {
         return dispatchSubmit;
       });
     } catch (error) {
-      alert(error);
-      loadingIndicatorElement.style.display = 'none';
+      renderError();
     } finally {
       loadingIndicatorElement.style.display = 'none';
     }
