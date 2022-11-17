@@ -1,5 +1,6 @@
 import './menu-container';
 import './review-container';
+import './review-form';
 
 import CONFIG from '../global/config';
 
@@ -57,6 +58,7 @@ class RestaurantDetail extends HTMLElement {
         <section class="restaurant-review">
           <h3 tabindex="0">Customer Review</h3>
           <review-container review='${JSON.stringify(customerReviews)}'></review-container>
+          <review-form></review-form>
         </section>
       </div>
     `;

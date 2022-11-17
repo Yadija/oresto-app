@@ -1,3 +1,4 @@
+import '../../components/hero-bar';
 import '../../components/restaurant-list';
 
 import RestaurantSource from '../../data/restaurant-source';

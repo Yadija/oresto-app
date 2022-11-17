@@ -7,7 +7,6 @@ import '../styles/responsive.scss';
 
 // components
 import './components/app-bar';
-import './components/hero-bar';
 import './components/footer-bar';
 
 import App from './view/app';
