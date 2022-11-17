@@ -57,14 +57,25 @@ class ReviewForm extends HTMLElement {
   }
 
   async onReviewSubmit(review) {
-    await RestaurantSource.postReviewRestaurant(review).then(async () => {
-      const reviewUpdate = await this.updatePostReview(this._id);
-      const dispatchSubmit = await this.dispatchReviewSubmitEvent(
-        reviewUpdate,
-      );
+    const loadingIndicatorElement = document.querySelector('loading-indicator');
+    loadingIndicatorElement.style.display = 'block';
 
-      return dispatchSubmit;
-    });
+    try {
+      await RestaurantSource.postReviewRestaurant(review).then(async () => {
+        const reviewUpdate = await this.updatePostReview(this._id);
+        const dispatchSubmit = await this.dispatchReviewSubmitEvent(
+          reviewUpdate,
+        );
+        location.reload(); // reload page
+
+        return dispatchSubmit;
+      });
+    } catch (error) {
+      alert(error);
+      loadingIndicatorElement.style.display = 'none';
+    } finally {
+      loadingIndicatorElement.style.display = 'none';
+    }
 
     this._name = '';
     this._review = '';

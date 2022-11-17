@@ -12,10 +12,13 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const loadingIndicatorElement = document.querySelector('loading-indicator');
     const restaurantDetailElement = document.querySelector('restaurant-detail');
+    loadingIndicatorElement.style.display = 'block';
 
     const restaurant = await RestaurantSource.detailRestaurant(url.id);
     restaurantDetailElement.restaurantDetail = restaurant;
+    loadingIndicatorElement.style.display = 'none';
   },
 };
 

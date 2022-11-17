@@ -13,9 +13,13 @@ const Home = {
   },
 
   async afterRender() {
+    const loadingIndicatorElement = document.querySelector('loading-indicator');
     const restaurantListElement = document.querySelector('restaurant-list');
+    loadingIndicatorElement.style.display = 'block';
+
     const restaurants = await RestaurantSource.listRestaurant();
     restaurantListElement.restaurantList = restaurants;
+    loadingIndicatorElement.style.display = 'none';
   },
 };
 
