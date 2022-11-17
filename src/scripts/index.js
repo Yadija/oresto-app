@@ -8,6 +8,7 @@ import '../styles/responsive.scss';
 // components
 import './components/app-bar';
 import './components/loading-indicator';
+import './components/restaurant-list';
 import './components/footer-bar';
 
 import App from './view/app';
