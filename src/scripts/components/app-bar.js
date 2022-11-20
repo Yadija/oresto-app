@@ -1,7 +1,4 @@
 import CONFIG from '../global/config';
-import CONSTANTS from '../global/constants';
-
-const { ENTER_KEY_CODE, ESC_KEY_CODE } = CONSTANTS;
 
 class AppBar extends HTMLElement {
   constructor() {
@@ -12,6 +9,7 @@ class AppBar extends HTMLElement {
   connectedCallback() {
     this.render();
     this.showDrawer();
+    this.toContent();
   }
 
   showDrawer() {
@@ -28,14 +26,20 @@ class AppBar extends HTMLElement {
       drawer.classList.remove('open');
       event.stopPropagation();
     });
+  }
 
-    main.addEventListener('keyup', (event) => {
-      if (event.keyCode === ENTER_KEY_CODE) {
-        drawer.classList.toggle('open');
-        event.stopPropagation();
-      } else if (event.keyCode === ESC_KEY_CODE) {
-        drawer.classList.remove('open');
-        event.stopPropagation();
+  // eslint-disable-next-line class-methods-use-this
+  toContent() {
+    const skipToContent = document.querySelector('.skip-link');
+    skipToContent.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#posts').focus();
+    });
+
+    skipToContent.addEventListener('keyup', (event) => {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.querySelector('#posts').focus();
       }
     });
   }
@@ -43,7 +47,7 @@ class AppBar extends HTMLElement {
   render() {
     this.innerHTML = `
       <header>
-        <a href="#posts" class="skip-link">Menuju ke konten</a>
+        <a tabIndex="0" class="skip-link">Menuju ke konten</a>
         <a href="/">${this._title}</a>
         <button id="hamburger" aria-label="navigation-menu">☰</button>
         <nav id="drawer">

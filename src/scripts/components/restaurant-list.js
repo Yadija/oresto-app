@@ -12,6 +12,7 @@ class RestaurantList extends HTMLElement {
 
   render() {
     this.classList.add('posts');
+    this.tabIndex = 0;
     this.innerHTML = '';
     this._restaurantList.forEach((item) => {
       const restaurantItemElement = document.createElement('restaurant-item');
