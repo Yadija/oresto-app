@@ -12,6 +12,10 @@ import './components/loading-indicator';
 import './components/restaurant-list';
 import './components/footer-bar';
 
+// lazy loading
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import App from './view/app';
 import swRegister from './utils/sw-register';
 
