@@ -3,6 +3,7 @@ import 'regenerator-runtime';
 /* styles */
 import '../styles/main.scss';
 import '../styles/skip-content.scss';
+import '../styles/skeleton.scss';
 import '../styles/responsive.scss';
 
 // components

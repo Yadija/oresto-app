@@ -8,7 +8,7 @@ class HeroBar extends HTMLElement {
   render() {
     this.innerHTML = `
       <div class="hero">
-        <img src="${CONFIG.APP_HERO_IMG}" alt="Jumbotron">
+        <img class="skeleton" src="${CONFIG.APP_HERO_IMG}" alt="Jumbotron">
         <div class="hero-thumb">
           <p>Find a restaurant you want</p>
         </div>
