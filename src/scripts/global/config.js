@@ -1,6 +1,10 @@
 const CONFIG = {
   APP_NAME: 'OResto',
-  APP_HERO_IMG: './images/heros/hero-image.jpg',
+  APP_HERO_IMG: {
+    LARGE: './images/heros/hero-image.jpg',
+    MEDIUM: './images/heros/hero-image-medium.jpg',
+    SMALL: './images/heros/hero-image-small.jpg',
+  },
   BASE_URL: 'https://restaurant-api.dicoding.dev/',
   BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/',
   BASE_MEDIUM_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/medium/',

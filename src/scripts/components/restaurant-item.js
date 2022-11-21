@@ -14,11 +14,17 @@ class RestaurantItem extends HTMLElement {
   }
 
   render() {
+    const { BASE_IMAGE_URL, IMAGE_QUALITY } = CONFIG;
+
     this.innerHTML = `
       <article class="card-item" tabindex="0">
         <div class="card-head">
           <p>${this._restaurantItem.city}</p>
-          <img class="skeleton" loading="lazy" src="${CONFIG.BASE_IMAGE_URL + CONFIG.IMAGE_QUALITY.SMALL + this._restaurantItem.pictureId}" alt="${this._restaurantItem.name || '-'}">
+          <picture>
+            <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + this._restaurantItem.pictureId}" type="image/webp" media="all and (max-width: 600px)" />        
+            <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + this._restaurantItem.pictureId}" type="image/jpeg" media="all and (max-width: 600px)" />
+            <img class="skeleton" loading="lazy" src="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + this._restaurantItem.pictureId}" alt="${this._restaurantItem.name || '-'}">
+          </picture>
         </div>
         <div class="card-desc">
           <p class="rating">⭐️ ${this._restaurantItem.rating || '-'}</p>

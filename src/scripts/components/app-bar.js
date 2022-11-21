@@ -47,7 +47,7 @@ class AppBar extends HTMLElement {
   render() {
     this.innerHTML = `
       <header>
-        <a tabIndex="0" class="skip-link">Menuju ke konten</a>
+        <a href="#posts" tabIndex="0" class="skip-link">Menuju ke konten</a>
         <a href="/">${this._title}</a>
         <button id="hamburger" aria-label="navigation-menu">☰</button>
         <nav id="drawer">
