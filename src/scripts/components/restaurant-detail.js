@@ -17,7 +17,6 @@ class RestaurantDetail extends HTMLElement {
       city,
       customerReviews,
       description,
-      // id,
       menus,
       name,
       pictureId,

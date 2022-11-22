@@ -9,7 +9,6 @@ class AppBar extends HTMLElement {
   connectedCallback() {
     this.render();
     this.showDrawer();
-    this.toContent();
   }
 
   showDrawer() {
