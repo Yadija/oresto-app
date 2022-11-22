@@ -23,6 +23,19 @@ class App {
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
+
+    const skipToContent = document.querySelector('.skip-link');
+    skipToContent.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#mainContent').focus();
+    });
+
+    skipToContent.addEventListener('keyup', (event) => {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.querySelector('#mainContent').focus();
+      }
+    });
   }
 }
 

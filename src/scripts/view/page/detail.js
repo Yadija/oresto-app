@@ -8,7 +8,7 @@ import { renderError } from '../templates/template-creator';
 const Detail = {
   async render() {
     return `
-      <restaurant-detail id="posts"></restaurant-detail>
+      <restaurant-detail></restaurant-detail>
       <div id="likeButtonContainer"></div>
     `;
   },

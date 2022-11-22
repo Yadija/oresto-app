@@ -28,26 +28,10 @@ class AppBar extends HTMLElement {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  toContent() {
-    const skipToContent = document.querySelector('.skip-link');
-    skipToContent.addEventListener('click', (event) => {
-      event.preventDefault();
-      document.querySelector('#posts').focus();
-    });
-
-    skipToContent.addEventListener('keyup', (event) => {
-      event.preventDefault();
-      if (event.keyCode === 13) {
-        document.querySelector('#posts').focus();
-      }
-    });
-  }
-
   render() {
     this.innerHTML = `
       <header>
-        <a href="#posts" tabIndex="0" class="skip-link">Menuju ke konten</a>
+        <a href="#" tabIndex="0" class="skip-link">Menuju ke konten</a>
         <a href="/">${this._title}</a>
         <button id="hamburger" aria-label="navigation-menu">☰</button>
         <nav id="drawer">
