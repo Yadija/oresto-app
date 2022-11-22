@@ -29,7 +29,7 @@ class RestaurantDetail extends HTMLElement {
       <div class="jumbotron-detail">
         <img class="skeleton" src="${CONFIG.BASE_IMAGE_URL + CONFIG.IMAGE_QUALITY.LARGE + pictureId}" alt="${name}" />
         <div class="jumbotron-thumb">
-          <h2>${name}</h2>
+          <h2 class="restaurant-title">${name}</h2>
           <p>${categories.map((categorie) => categorie.name).join(' | ')}</p>   
         </div>
       </div>
