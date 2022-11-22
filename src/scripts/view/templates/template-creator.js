@@ -24,8 +24,8 @@ const createLikeButtonTemplate = () => `
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this restaurant" id="likeButton" class="like">
+const createUnlikeButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="unlikeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
@@ -34,5 +34,5 @@ export {
   renderError,
   renderEmptyData,
   createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createUnlikeButtonTemplate,
 };
