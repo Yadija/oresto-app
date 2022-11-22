@@ -8,3 +8,4 @@ package-lock.json
 *.firebaserc
 firebase.json
 .vscode
+e2e/outputs
