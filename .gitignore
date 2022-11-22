@@ -7,3 +7,4 @@ package-lock.json
 *.zip
 *.firebaserc
 firebase.json
+.vscode

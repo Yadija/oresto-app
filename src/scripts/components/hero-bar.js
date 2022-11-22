@@ -11,10 +11,10 @@ class HeroBar extends HTMLElement {
     this.innerHTML = `
       <div class="hero">
         <picture class="skeleton">
-          <source srcset="${heroImg.SMALL}" type="image/webp" media="all and (max-width: 650px)" />        
-          <source srcset="${heroImg.SMALL}" type="image/jpeg" media="all and (max-width: 650px)" />
-          <source srcset="${heroImg.MEDIUM}" type="image/webp" media="all and (min-width: 651px) and (max-width: 960px)" />    
-          <source srcset="${heroImg.MEDIUM}" type="image/jpeg" media="all and (min-width: 651px) and (max-width: 960px)" />
+          <source srcset="${heroImg.SMALL}" type="image/webp" media="all and (max-width: 600px)" />        
+          <source srcset="${heroImg.SMALL}" type="image/jpeg" media="all and (max-width: 600px)" />
+          <source srcset="${heroImg.MEDIUM}" type="image/webp" media="all and (min-width: 601px) and (max-width: 960px)" />    
+          <source srcset="${heroImg.MEDIUM}" type="image/jpeg" media="all and (min-width: 601px) and (max-width: 960px)" />
           <source srcset="${heroImg.LARGE}" type="image/webp" media="all and (min-width: 961px)" />        
           <source srcset="${heroImg.LARGE}" type="image/jpeg" media="all and (min-width: 961px)" />
           <img class="skeleton" src="${heroImg.LARGE}" alt="Jumbotron"/>
