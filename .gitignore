@@ -1,11 +1,6 @@
-.idea
 node_modules
-design
 dist
-.firebase
 package-lock.json
-*.zip
-*.firebaserc
-firebase.json
 .vscode
+.idea
 e2e/outputs

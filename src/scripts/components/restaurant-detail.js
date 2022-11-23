@@ -56,11 +56,14 @@ class RestaurantDetail extends HTMLElement {
         </section>
         <section class="restaurant-review">
           <h3 tabindex="0">Customer Review</h3>
-          <review-container review='${JSON.stringify(customerReviews)}'></review-container>
+          <review-container></review-container>
           <review-form></review-form>
         </section>
       </div>
     `;
+
+    const reviewContainerElement = document.querySelector('review-container');
+    reviewContainerElement.reviewContainer = customerReviews;
   }
 }
 

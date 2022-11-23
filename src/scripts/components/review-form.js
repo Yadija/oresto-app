@@ -1,8 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import RestaurantSource from '../data/restaurant-source';
-
 import UrlParser from '../routes/url-parser';
-
 import { renderError } from '../view/templates/template-creator';
 
 class ReviewForm extends HTMLElement {
@@ -50,37 +48,21 @@ class ReviewForm extends HTMLElement {
     return restaurantDataUpdate;
   }
 
-  async dispatchReviewSubmitEvent(updatedPostReview) {
-    this.dispatchEvent(
-      new CustomEvent('review-submit', {
-        bubbles: true,
-        detail: updatedPostReview.customerReviews,
-      }),
-    );
-  }
-
   async onReviewSubmit(review) {
     const loadingIndicatorElement = document.querySelector('loading-indicator');
     loadingIndicatorElement.style.display = 'block';
 
     try {
-      await RestaurantSource.postReviewRestaurant(review).then(async () => {
-        const reviewUpdate = await this.updatePostReview(this._id);
-        const dispatchSubmit = await this.dispatchReviewSubmitEvent(
-          reviewUpdate,
-        );
-        location.reload(); // reload page
-
-        return dispatchSubmit;
-      });
+      const responseReview = await RestaurantSource.postReviewRestaurant(review);
+      const reviewContainerElement = document.querySelector('review-container');
+      reviewContainerElement.reviewContainer = responseReview.customerReviews;
     } catch (error) {
       renderError();
     } finally {
       loadingIndicatorElement.style.display = 'none';
+      document.querySelector('#name-input').value = '';
+      document.querySelector('#review-input').value = '';
     }
-
-    this._name = '';
-    this._review = '';
   }
 
   async onButtonSubmitClick() {
@@ -117,7 +99,7 @@ class ReviewForm extends HTMLElement {
             placeholder="Please enter your review here..."
             value="${this._review}"></textarea>
         </div>
-        <button class="review-form-submit" type="submit">send review</button>
+        <button class="review-form-submit" type="submit" tabindex="0">Add Review</button>
       </div>
     `;
   }

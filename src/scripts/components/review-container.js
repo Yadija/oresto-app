@@ -1,8 +1,8 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable indent */
 class ReviewContainer extends HTMLElement {
-  connectedCallback() {
-    this._review = JSON.parse(this.getAttribute('review'));
+  set reviewContainer(reviewContainer) {
+    this._review = reviewContainer;
     this.render();
   }
 
