@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const assert = require('assert');
 
 Feature('Posting Review On Restaurant');

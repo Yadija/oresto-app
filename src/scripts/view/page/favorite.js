@@ -1,4 +1,4 @@
-import FavoriteRestaurantSource from '../../data/favorite-restaurant-source';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { renderError, renderEmptyData } from '../templates/template-creator';
 
 const Favorite = {
@@ -15,7 +15,7 @@ const Favorite = {
     loadingIndicatorElement.style.display = 'block';
 
     try {
-      const favoriteRestaurant = await FavoriteRestaurantSource.getAllRestaurant();
+      const favoriteRestaurant = await FavoriteRestaurantIdb.getAllRestaurants();
       if (favoriteRestaurant.length > 0) {
         restaurantListElement.restaurantList = favoriteRestaurant;
       } else {
