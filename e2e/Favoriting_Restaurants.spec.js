@@ -14,7 +14,7 @@ Scenario('showing empty favorite restaurants', ({ I }) => {
 
 Scenario('favoriting one restaurant', async ({ I }) => {
   I.seeElement('restaurant-list');
-  I.seeElement('restaurant-item');
+  I.seeElement('article');
   I.seeElement('.card-item a');
 
   const firstRestaurant = locate('.card-item a').first();
@@ -25,7 +25,7 @@ Scenario('favoriting one restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
-  I.seeElement('restaurant-item');
+  I.seeElement('article');
   const favoritedRestaurantTitle = await I.grabTextFrom(
     '.card-item a',
   );

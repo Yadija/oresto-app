@@ -24,7 +24,7 @@
       }
     }
   
-    .posts {
+    .restaurant-result-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
@@ -93,7 +93,7 @@
       }
     }
   
-    .posts {
+    .restaurant-result-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }

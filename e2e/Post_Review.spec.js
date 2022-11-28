@@ -8,7 +8,7 @@ Before(({ I }) => {
 
 Scenario('posting review on restaurant', async ({ I }) => {
   I.seeElement('restaurant-list');
-  I.seeElement('restaurant-item');
+  I.seeElement('article');
   I.seeElement('.card-item a');
 
   const firstRestaurant = locate('.card-item a').first();

@@ -41,13 +41,6 @@ class ReviewForm extends HTMLElement {
     this._review = value;
   }
 
-  async updatePostReview(restaurantID) {
-    const restaurantDataUpdate = await RestaurantSource.detailRestaurant(
-      restaurantID,
-    );
-    return restaurantDataUpdate;
-  }
-
   async onReviewSubmit(review) {
     const loadingIndicatorElement = document.querySelector('loading-indicator');
     loadingIndicatorElement.style.display = 'block';
@@ -60,8 +53,12 @@ class ReviewForm extends HTMLElement {
       renderError();
     } finally {
       loadingIndicatorElement.style.display = 'none';
+
       document.querySelector('#name-input').value = '';
       document.querySelector('#review-input').value = '';
+
+      this._name = '';
+      this._review = '';
     }
   }
 

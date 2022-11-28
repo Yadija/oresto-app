@@ -8,7 +8,7 @@ Before(({ I }) => {
 
 Scenario('unfavoriting a restaurant', async ({ I }) => {
   I.seeElement('restaurant-list');
-  I.seeElement('restaurant-item');
+  I.seeElement('article');
   I.seeElement('.card-item a');
 
   const firstRestaurant = locate('.card-item a').first();
@@ -20,8 +20,8 @@ Scenario('unfavoriting a restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
-  I.seeElement('restaurant-list');
-  I.seeElement('restaurant-item');
+  I.seeElement('.restaurant-result-container');
+  I.seeElement('article');
 
   const favoritedRestaurantName = await I.grabTextFrom('.card-item a');
   assert.strictEqual(firstRestaurantName, favoritedRestaurantName);

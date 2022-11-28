@@ -123,7 +123,18 @@ main {
     margin-top: 30px;
   }
 
-  .posts {
+  #query {
+    width: 70%;
+    display: flex;
+    margin: 5px auto;
+    padding: 0 20px;
+    min-height: 44px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+  }
+
+  .restaurant-result-container {
     display: grid;
     margin: 20px;
     padding: 0 30px;
@@ -184,6 +195,15 @@ main {
       .desc {
         font-size: .9rem;
         padding-top: 5px;
+      }
+    }
+
+    .restaurant-item__not__found {
+      h1 {
+        margin-top: 50px;
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
       }
     }
   }

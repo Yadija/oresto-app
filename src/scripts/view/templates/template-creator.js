@@ -1,3 +1,30 @@
+import CONFIG from '../../global/config';
+
+const showDesc = (description = '-') => {
+  const limit = 225;
+  if (description.length > limit) return `${description.substring(0, limit)}...`;
+  return description;
+}
+const { BASE_IMAGE_URL, IMAGE_QUALITY } = CONFIG;
+
+const createRestaurantItemTemplate = (restaurant) => `
+  <article class="card-item" tabindex="0">
+    <div class="card-head">
+      <p>${restaurant.city}</p>
+      <picture>
+        <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" type="image/webp" media="all and (max-width: 600px)" />        
+        <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" type="image/jpeg" media="all and (max-width: 600px)" />
+        <img class="lazyload skeleton" loading="lazy" src="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
+      </picture>
+    </div>
+    <div class="card-desc">
+      <p class="rating">⭐️ ${restaurant.rating || '-'}</p>
+      <h3 class="title"><a href="/#/detail/${restaurant.id}">${restaurant.name || '-'}</a></h3>
+      <p class="desc">${showDesc(restaurant.description)}</p>
+    </div>
+  </article>
+`;
+
 const renderError = () => {
   const mainContent = document.querySelector('#mainContent');
   mainContent.innerHTML = `
@@ -31,6 +58,7 @@ const createUnlikeButtonTemplate = () => `
 `;
 
 export {
+  createRestaurantItemTemplate,
   renderError,
   renderEmptyData,
   createLikeButtonTemplate,

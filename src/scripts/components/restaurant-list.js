@@ -1,4 +1,4 @@
-import './restaurant-item';
+import { createRestaurantItemTemplate } from '../view/templates/template-creator';
 
 class RestaurantList extends HTMLElement {
   set restaurantList(restaurantList) {
@@ -6,18 +6,12 @@ class RestaurantList extends HTMLElement {
     this.render();
   }
 
-  get restaurantList() {
-    return this._restaurantList;
-  }
-
   render() {
-    this.classList.add('posts');
+    this.classList.add('restaurant-result-container');
     this.tabIndex = 0;
     this.innerHTML = '';
-    this._restaurantList.forEach((item) => {
-      const restaurantItemElement = document.createElement('restaurant-item');
-      restaurantItemElement.restaurantItem = item;
-      this.appendChild(restaurantItemElement);
+    this._restaurantList.forEach((restaurant) => {
+      this.innerHTML += createRestaurantItemTemplate(restaurant);
     });
   }
 }

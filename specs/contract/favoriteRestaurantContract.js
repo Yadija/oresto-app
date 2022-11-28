@@ -18,7 +18,7 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
       .toEqual([]);
   });
 
-  it('can return all of the movies that have been added', async () => {
+  it('can return all of the restaurants that have been added', async () => {
     favoriteRestaurant.saveRestaurant({ id: 1 });
     favoriteRestaurant.saveRestaurant({ id: 2 });
 
@@ -56,6 +56,19 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
         { id: 2 },
         { id: 3 },
       ]);
+  });
+
+  it('should be able to search for restaurants', async () => {
+    favoriteRestaurant.saveRestaurant({ id: 1, name: 'restaurant a' });
+    favoriteRestaurant.saveRestaurant({ id: 2, name: 'restaurant b' });
+    favoriteRestaurant.saveRestaurant({ id: 3, name: 'restaurant abc' });
+    favoriteRestaurant.saveRestaurant({ id: 4, name: 'ini mah restaurant abcd' });
+
+    expect(await favoriteRestaurant.searchRestaurants('restaurant a')).toEqual([
+      { id: 1, name: 'restaurant a' },
+      { id: 3, name: 'restaurant abc' },
+      { id: 4, name: 'ini mah restaurant abcd' },
+    ]);
   });
 };
 
