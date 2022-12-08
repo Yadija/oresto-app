@@ -54,8 +54,8 @@ class ReviewForm extends HTMLElement {
     } finally {
       loadingIndicatorElement.style.display = 'none';
 
-      document.querySelector('#name-input').value = '';
-      document.querySelector('#review-input').value = '';
+      this.querySelector('#name-input').value = '';
+      this.querySelector('#review-input').value = '';
 
       this._name = '';
       this._review = '';
