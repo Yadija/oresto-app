@@ -24,10 +24,19 @@ class RestaurantDetail extends HTMLElement {
     } = this._restaurantDetail;
 
     const { foods, drinks } = menus;
+    const { BASE_IMAGE_URL, IMAGE_QUALITY } = CONFIG;
 
     this.innerHTML = `
       <div class="jumbotron-detail">
-        <img class="skeleton" src="${CONFIG.BASE_IMAGE_URL + CONFIG.IMAGE_QUALITY.LARGE + pictureId}" alt="${name}" />
+        <picture>
+          <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + pictureId}" type="image/webp" media="all and (max-width: 600px)" />        
+          <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + pictureId}" type="image/jpeg" media="all and (max-width: 600px)" />
+          <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.MEDIUM + pictureId}" type="image/webp" media="all and (min-width: 601px) and (max-width: 960px)" />    
+          <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.MEDIUM + pictureId}" type="image/jpeg" media="all and (min-width: 601px) and (max-width: 960px)" />
+          <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.LARGE + pictureId}" type="image/webp" media="all and (min-width: 961px)" />        
+          <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.LARGE + pictureId}" type="image/jpeg" media="all and (min-width: 961px)" />
+          <img class="skeleton" src="${BASE_IMAGE_URL + IMAGE_QUALITY.LARGE + pictureId}" alt="${name || '-'}" />
+        </picture>
         <div class="jumbotron-thumb">
           <h2 class="restaurant-title">${name}</h2>
           <p>${categories.map((categorie) => categorie.name).join(' | ')}</p>   

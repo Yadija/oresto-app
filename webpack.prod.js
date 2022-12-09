@@ -1,6 +1,7 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const common = require('./webpack.common');
@@ -11,7 +12,9 @@ module.exports = merge(common, {
     minimizer: [
       '...',
       new CssMinimizerPlugin(),
+      new UglifyJsPlugin(),
     ],
+    minimize: true,
     splitChunks: {
       chunks: 'all',
       minSize: 20000,

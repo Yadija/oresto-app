@@ -14,7 +14,7 @@ const createRestaurantItemTemplate = (restaurant) => `
       <picture>
         <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" type="image/webp" media="all and (max-width: 600px)" />        
         <source srcset="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" type="image/jpeg" media="all and (max-width: 600px)" />
-        <img class="lazyload skeleton" loading="lazy" src="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
+        <img class="lazyload skeleton" src="${BASE_IMAGE_URL + IMAGE_QUALITY.SMALL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
       </picture>
     </div>
     <div class="card-desc">
