@@ -14,18 +14,18 @@ describe('Liking A Restaurant', () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="like this restaurant"]'))
-        .toBeTruthy();
+      .toBeTruthy();
   });
 
-  it("should not show unlike button when the restaurant has not been liked before", async () => {
+  it('should not show unlike button when the restaurant has not been liked before', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(
-      document.querySelector('[aria-label="unlike this restaurant"]')
+      document.querySelector('[aria-label="unlike this restaurant"]'),
     ).toBeFalsy();
   });
 
-  it("should be able to like the restaurant", async () => {
+  it('should be able to like the restaurant', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));

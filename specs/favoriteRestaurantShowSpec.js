@@ -8,7 +8,7 @@ describe('Showing all favorite restaurants', () => {
   const renderTemplate = () => {
     view = new FavoriteRestaurantSearchView();
     document.body.innerHTML = view.getTemplate();
-  }
+  };
 
   beforeEach(() => {
     renderTemplate();
@@ -53,19 +53,19 @@ describe('Showing all favorite restaurants', () => {
       favoriteRestaurants.getAllRestaurants.and.returnValues([
         {
           id: 111,
-          name: "A",
-          pictureId: "1234",
+          name: 'A',
+          pictureId: '1234',
           description: "It's restaurant A",
-          rating: "5",
-          city: "Bogor",
+          rating: '5',
+          city: 'Bogor',
         },
         {
           id: 222,
-          name: "B",
-          pictureId: "5677",
+          name: 'B',
+          pictureId: '5677',
           description: "It's restaurant B",
-          rating: "4.5",
-          city: "Subang",
+          rating: '4.5',
+          city: 'Subang',
         },
       ]);
 

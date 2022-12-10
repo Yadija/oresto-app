@@ -8,7 +8,7 @@ const FavoriteRestaurantArray = {
       return;
     }
 
-    return favoriteRestaurants.find((restaurant) => restaurant.id == id);
+    return favoriteRestaurants.find((restaurant) => restaurant.id === id);
   },
 
   getAllRestaurants() {
@@ -29,7 +29,7 @@ const FavoriteRestaurantArray = {
   },
 
   deleteRestaurant(id) {
-    favoriteRestaurants = favoriteRestaurants.filter((restaurant) => restaurant.id != id);
+    favoriteRestaurants = favoriteRestaurants.filter((restaurant) => restaurant.id !== id);
   },
 
   searchRestaurants(query) {
