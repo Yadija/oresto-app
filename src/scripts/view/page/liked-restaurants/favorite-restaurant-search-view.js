@@ -30,7 +30,7 @@ class FavoriteRestaurantSearchView {
       html = this._getEmptyRestaurantTemplate();
       restaurantResultContainer.style = 'display: block';
     }
-    
+
     restaurantResultContainer.innerHTML = html;
     restaurantResultContainer.dispatchEvent(new Event('restaurants:updated'));
   }

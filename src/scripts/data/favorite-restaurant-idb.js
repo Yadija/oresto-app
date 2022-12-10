@@ -25,7 +25,7 @@ const FavoriteRestaurantIdb = {
   async saveRestaurant(restaurant) {
     if (!restaurant.hasOwnProperty('id')) {
       return;
-  }
+    }
 
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
   },
@@ -44,7 +44,7 @@ const FavoriteRestaurantIdb = {
 
       return jammedRestaurantTitle.indexOf(jammedQuery) !== -1;
     });
-  }
+  },
 };
 
 export default FavoriteRestaurantIdb;

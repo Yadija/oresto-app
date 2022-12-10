@@ -4,7 +4,7 @@ const showDesc = (description = '-') => {
   const limit = 225;
   if (description.length > limit) return `${description.substring(0, limit)}...`;
   return description;
-}
+};
 const { BASE_IMAGE_URL, IMAGE_QUALITY } = CONFIG;
 
 const createRestaurantItemTemplate = (restaurant) => `
